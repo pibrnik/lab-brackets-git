@@ -104,15 +104,17 @@
             <div class="box-body">
               <div class="row">
                   <div class="col-xs-12 col-md-6 col-sm-6">
-                  <form name="submit-to-google-sheet">
+            <form name="submit-to-google-sheet">
   <input name="ime" type="text" placeholder="Ime" required>
 <input name="priimek" type="text" placeholder="Priimek" required>
   <input name="razred" type="text" placeholder="Razred" required>
-  <button type="submit">Pošlji</button>
+  <button type="submit">Send</button>
 </form>
-
+<script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw9lnhMGP5e3Gt6-k3vOOdeV5luRP8an_BlpnRjfaU_7XCJu7o1/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwpEHQPPtey85aCOEBOG3AlswSgybxYWQqHYFSjPMHq0_Uu14M/exec'
   const form = document.forms['submit-to-google-sheet']
 
   form.addEventListener('submit', e => {
@@ -123,8 +125,6 @@
   })
 </script>
 
-
-              
                 
               </div>
             </div>
