@@ -103,15 +103,27 @@
             </div>
             <div class="box-body">
               <div class="row">
-                <div class="col-xs-4">
-                  <input type="text" class="form-control" placeholder="Ime">
-                </div>
-                <div class="col-xs-4">
-                  <input type="text" class="form-control" placeholder="Priimek">
-                </div>
-                <div class="col-xs-2">
-                  <input type="text" class="form-control" placeholder="Razred">
-                </div>
+                  <div class="col-xs-12 col-md-6 col-sm-6">
+                  <form name="submit-to-google-sheet">
+  <input name="ime" type="text" placeholder="Ime" required>
+<input name="priimek" type="text" placeholder="Priimek" required>
+  <input name="razred" type="text" placeholder="Razred" required>
+  <button type="submit">Pošlji</button>
+</form>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw9lnhMGP5e3Gt6-k3vOOdeV5luRP8an_BlpnRjfaU_7XCJu7o1/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
               
                 
               </div>
@@ -154,11 +166,24 @@
             <div class="info-box-content">
               <span class="info-box-text">DELAVNICA 3</span>
               <span class="info-box-number">PRAZNO</span>
+
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
+              <div class="col-md-2 col-sm-2 col-xs-20">
+                  <div class="info-box">
+              <a id="shrani" class="btn btn-app">
+                <i class="fa fa-save"></i> Shrani
+              </a>
+                  </div>
+            </div>
+            <!-- /.info-box-content -->
+
+
+          <!-- /.info-box -->
+
           </div>
                         
           <div class="row">
@@ -1046,7 +1071,18 @@
           <!-- nav-tabs-custom -->
         </div>
 
+
           </div>
+        <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+            <button></button>
+              </div>
+            </div>
+            </div>
+        </div>
+
           
       </section>
       <!-- /.content -->
