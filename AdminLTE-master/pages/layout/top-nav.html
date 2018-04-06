@@ -255,7 +255,32 @@ function defaultValues() {
   <input name="razred" class="form-control" type="text" placeholder="Razred" required>
                 </div>
 
-  <button type="submit" onClick="window.location.reload()" class="btn btn-default">Prijava</button>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                Prijava
+              </button>
+                <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Prijava na OIV dejavnosti</h4>
+              </div>
+              <div class="modal-body">
+                <p>Ali se res želite prijavti? Po prijavi se bo stran osvežila!&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Prekliči</button>
+
+                  <button type="submit" onClick="window.location.reload()" class="btn btn-success">Prijava</button>
+
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
 </form>
 <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
 <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
